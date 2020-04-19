@@ -8,13 +8,16 @@ namespace Andre.Utils.RandomGeneration
         public float seed = 0;
         public string Name;
         public float time = 0;
+        private RandomNumberGen random;
 
         private void Awake()
         {
             time = System.Environment.TickCount;
             seed = time + Name.GetHashCode();
+            if (random == null)
+                random = new RandomNumberGen();
             if (UseGeneratedSeed)
-                Random.InitState((int)seed);
+                random.SetSeed((int)seed);
         }
 
         private void Update()
@@ -32,12 +35,12 @@ namespace Andre.Utils.RandomGeneration
         public void ChangeSeed()
         {
             time = System.Environment.TickCount;
-            Random.InitState((int)time + Name.GetHashCode());
+            random.SetSeed((int)time + Name.GetHashCode());
         }
 
         public void ResetSeed()
         {
-            Random.InitState((int)seed);
+            random.SetSeed((int)seed);
         }
 
     }

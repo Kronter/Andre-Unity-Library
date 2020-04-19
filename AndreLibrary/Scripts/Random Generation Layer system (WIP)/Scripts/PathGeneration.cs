@@ -71,7 +71,7 @@ public class PathGeneration : RandomGenerationLayer
         {
             case 0:
                 direction = 2;
-                movingDirection = -Vector2Int.up;
+                movingDirection = Vector2Int.down;
                 break;
             case 1:
                 direction = 3;
@@ -79,7 +79,7 @@ public class PathGeneration : RandomGenerationLayer
                 break;
             case 2:
                 direction = 0;
-                movingDirection = -Vector2Int.down;
+                movingDirection = Vector2Int.up;
                 break;
             case 3:
                 direction = 1;
@@ -129,7 +129,7 @@ public class PathGeneration : RandomGenerationLayer
         {
             case 0:
                 direction = 2;
-                movingDirection = -Vector2Int.up;
+                movingDirection = Vector2Int.down;
                 break;
             case 1:
                 direction = 3;
@@ -137,7 +137,7 @@ public class PathGeneration : RandomGenerationLayer
                 break;
             case 2:
                 direction = 0;
-                movingDirection = -Vector2Int.down;
+                movingDirection = Vector2Int.up;
                 break;
             case 3:
                 direction = 1;
@@ -165,13 +165,13 @@ public class PathGeneration : RandomGenerationLayer
                 switch (direction)
                 {
                     case 0:
-                        movingDirection = -Vector2Int.down;
+                        movingDirection = Vector2Int.up;
                         break;
                     case 1:
                         movingDirection = Vector2Int.left;
                         break;
                     case 2:
-                        movingDirection = -Vector2Int.up;
+                        movingDirection = Vector2Int.down;
                         break;
                     case 3:
                         movingDirection = Vector2Int.right;
